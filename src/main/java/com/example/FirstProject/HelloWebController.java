@@ -39,4 +39,12 @@ public class HelloWebController {
     }
 
 
+//    Handles HTTP PUT requests to "/hello/put/{firstName}"
+//    http://localhost:8080/hello/put/Abhishek?lastName=Sagar
+    @PutMapping("hello/put/{firstName}")
+    public String Hello(@PathVariable String firstName, @RequestParam (value = "lastName") String lastName) {
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
+    }
+
+
 }
