@@ -27,7 +27,16 @@ public class HelloWebController {
 //    It takes a dynamic value from the URL path using @PathVariable and returns a greeting message.
 //    http://localhost:8080/hello/param/Abhishek
     @GetMapping("/hello/param/{name}")
-    public String HelloParam(@PathVariable String name){
-        return "Hello " +name + " from BridgeLabz";
+    public String HelloParam(@PathVariable String name) {
+        return "Hello " + name + " from BridgeLabz";
     }
+
+//    Extracts firstName and lastName from the request body and returns a greeting message
+//    http://localhost:8080/hello/post
+    @PostMapping("hello/post")
+    public String Hello(@RequestBody User user){
+        return "Hello " +user.getFirstName() + " " +user.getLastName() + " from BridgeLabz";
+    }
+
+
 }
